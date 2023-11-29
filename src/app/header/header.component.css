@@ -7,6 +7,19 @@
 
 h1.site-title {
   margin: 0;
+  position: relative;
+  z-index: 1;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 45%;
+    left: -4%;
+    width: 110%;
+    height: 30%;
+    z-index: -1;
+    background-color: var(--color-main);
+  }
 
   & a {
     text-decoration: none;
