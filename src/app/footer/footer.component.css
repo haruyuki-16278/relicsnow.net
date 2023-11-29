@@ -1,0 +1,11 @@
+:host {
+  padding-block: 16px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+}
+
+small {
+  width: 280px;
+}
