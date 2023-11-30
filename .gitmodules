@@ -1,0 +1,3 @@
+[submodule "src/assets/articles"]
+	path = src/assets/articles
+	url = git@github.com:haruyuki-16278/relicsnow.net-articles.git
