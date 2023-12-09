@@ -14,12 +14,12 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ListComponent implements OnInit {
   articlesPerPage = 10;
-  page: number = 1
-  articleCount: number = 0;
+  page = 1
+  articleCount = 0;
   articles: Article[] = [];
 
   @HostBinding('style.minHeight')
-  minHeight: string = '0'
+  minHeight = '0'
 
   get showNextLink (): boolean {
     return this.page < Math.ceil(this.articleCount / 10)

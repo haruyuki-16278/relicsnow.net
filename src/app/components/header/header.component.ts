@@ -1,13 +1,11 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component } from "@angular/core";
+import { CommonModule } from "@angular/common";
 
 @Component({
-  selector: 'rs-header',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './header.component.html',
-  styleUrl: './header.component.css'
+	selector: "rs-header",
+	standalone: true,
+	imports: [CommonModule],
+	templateUrl: "./header.component.html",
+	styleUrl: "./header.component.css",
 })
-export class HeaderComponent {
-
-}
+export class HeaderComponent {}
