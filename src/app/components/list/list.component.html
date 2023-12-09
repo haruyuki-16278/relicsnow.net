@@ -1,7 +1,8 @@
 <h2>記事一覧</h2>
+<p class="page-info">全{{ articleCount }}件の記事</p>
 @for (article of articles; track $index) {
   <article>
-    <h3 class="title"><a [href]="'/blog?path=' + article.path">{{ article.title }}</a></h3>
+    <h3 class="title"><a [href]="'/blog/'+ article.path">{{ article.title }}</a></h3>
     <p class="abstract">{{ article.abstract }}</p>
     <p class="date">{{ getDateLabel(article) }}</p>
     <ul class="tags">
@@ -11,3 +12,12 @@
     </ul>
   </article>
 }
+<nav class="pager">
+  @if (page > 1) {
+    <a class="prev" [href]="'/blogs/' + (page - 1)">prev</a>
+  }
+  <span class="current">- page {{ page }} -</span>
+  @if (showNextLink) {
+    <a class="next" [href]="'/blogs/' + (page + 1)">next</a>
+  }
+</nav>
