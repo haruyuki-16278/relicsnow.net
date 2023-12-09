@@ -2,7 +2,7 @@
 <p class="page-info">全{{ articleCount }}件の記事</p>
 @for (article of articles; track $index) {
   <article>
-    <h3 class="title"><a [href]="'/blog/'+ article.path">{{ article.title }}</a></h3>
+    <h3 class="title"><a [href]="'/blog?path='+ article.path">{{ article.title }}</a></h3>
     <p class="abstract">{{ article.abstract }}</p>
     <p class="date">{{ getDateLabel(article) }}</p>
     <ul class="tags">
