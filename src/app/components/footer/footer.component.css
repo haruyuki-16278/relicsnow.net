@@ -7,9 +7,11 @@
 }
 
 small {
+  flex-shrink: 0;
   width: 280px;
+  color: var(--color-text-sub)
 }
 
 img {
-  width: 80px;
+  max-width: 80px;
 }
