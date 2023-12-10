@@ -1,6 +1,7 @@
 main {
   display: block;
   width: 100%;
+  overflow-x: hidden;
   padding-inline: 32px;
 
   > h2 {
@@ -22,6 +23,10 @@ main {
       z-index: -1;
       background-color: var(--color-sub);
     }
+  }
+
+  & img {
+    max-width: 100%;
   }
 }
 
