@@ -55,7 +55,7 @@ export class ListComponent implements OnInit {
 
     const headerHeight = this.document.querySelector('rs-header')?.clientHeight ?? 0;
     const footerHeight = this.document.querySelector('rs-footer')?.clientHeight ?? 0;
-    this.minHeight = `calc(100vh - ${headerHeight}px - ${footerHeight}px)`;
+    this.minHeight = `calc(100svh - ${headerHeight}px - ${footerHeight}px)`;
   }
 
   getDateLabel(article: Article): string {
