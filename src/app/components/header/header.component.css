@@ -6,20 +6,10 @@
 }
 
 h1.site-title {
-  margin: 0;
+  margin: 0 -4px;
+  padding-inline: 4px;
   position: relative;
-  z-index: 1;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 45%;
-    left: -4%;
-    width: 110%;
-    height: 30%;
-    z-index: -1;
-    background-color: var(--color-main);
-  }
+  background: linear-gradient(transparent 50%, var(--color-main) 50%, var(--color-main) 80%, transparent 80%);
 
   & a {
     text-decoration: none;

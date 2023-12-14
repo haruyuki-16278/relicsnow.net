@@ -7,22 +7,11 @@
 
   & > h2 {
     width: fit-content;
-    margin: 0;
+    margin: 0 -4px;
+    padding-inline: 4px;
     font-size: 28px;
     line-height: 1.6;
-    position: relative;
-    z-index: 1;
-
-    &::before {
-      content: '';
-      position: absolute;
-      top: 45%;
-      left: -4%;
-      width: 110%;
-      height: 30%;
-      z-index: -1;
-      background-color: var(--color-sub);
-    }
+    background: linear-gradient(transparent 50%, var(--color-sub) 50%, var(--color-sub) 80%, transparent 80%)
   }
 
   & > p.page-info {

@@ -10,19 +10,7 @@ main {
     margin-left: -16px;
     font-size: 28px;
     line-height: 1.6;
-    position: relative;
-    z-index: 1;
-  
-    &::before {
-      content: '';
-      position: absolute;
-      top: 45%;
-      left: -4%;
-      width: 110%;
-      height: 30%;
-      z-index: -1;
-      background-color: var(--color-sub);
-    }
+    position: relative;  background: linear-gradient(transparent 50%, var(--color-sub) 50%, var(--color-sub) 80%, transparent 80%);
   }
 
   & img {
