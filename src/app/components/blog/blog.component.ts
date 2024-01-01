@@ -28,7 +28,7 @@ export class BlogComponent implements OnInit {
           .subscribe(async (response) => {
             this.article = `<main>${await marked(
               response.replace(/---[\s\S\n]*---\n/g, ''),
-            )}</main>`;
+            )}</main>`.replace('src="imgs/', 'src="assets/articles/imgs/');
             console.log(this.article);
           });
       }

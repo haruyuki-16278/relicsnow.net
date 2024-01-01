@@ -16,5 +16,9 @@ main {
   & img {
     max-width: 100%;
   }
+
+  a {
+    margin-inline: 0;
+  }
 }
 
