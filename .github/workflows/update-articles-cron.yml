@@ -1,0 +1,27 @@
+name: update-articles-cron
+on:
+  schedule:
+    - cron: '0 0 * * *'
+jobs:
+  update-articles-cron:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [20.x]
+    steps:
+      - uses: actions/checkout@master
+      - name: update articles
+        run: |
+          git config user.name "$(git --no-pager log --format=format:'%an' -n 1)"
+          git config user.email "$(git --no-pager log --format=format:'%ae' -n 1)"
+          git submodule update --remote
+          git commit -m 'update articles'
+          git push
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: deploy
+        run: |
+          npm install
+          npm run deploy
