@@ -8,7 +8,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "deploy": "node tools/deploy.mjs",
+    "deploy": "ng build && node tools/deploy.mjs",
     "serve:ssr:relicsnow.net": "node dist/relicsnow.net/server/server.mjs"
   },
   "private": true,
