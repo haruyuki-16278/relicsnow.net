@@ -29,8 +29,8 @@ export class BlogComponent implements OnInit {
           .subscribe(async (response) => {
             this.article = `<main>${await marked(
               response.replace(/---[\s\S\n]*---\n/g, ''),
-            )}</main>`.replace('src="imgs/', 'src="assets/articles/imgs/');
-            const codes = [...this.article.matchAll(/<code(.*)>([\s\S\n]*?)<\/code>/g)];
+            )}</main>`.replaceAll('src="imgs/', 'src="assets/articles/imgs/');
+            const codes = [...this.article.matchAll(/<code(.*?)>([\s\S\n]*?)<\/code>/g)];
             console.log(codes);
             codes.forEach((code) => {
               const format = [...code[1].matchAll(/class="language-(.+)"/g)]?.[0]?.[1];
