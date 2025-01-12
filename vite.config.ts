@@ -3,6 +3,7 @@
 import { defineConfig } from 'vite';
 import analog from '@analogjs/platform';
 import { glob } from 'glob';
+import { generateRssFeed } from './src/server/rss';
 
 // https://vitejs.dev/config/
 export default defineConfig(async ({ mode }) => {
@@ -12,6 +13,11 @@ export default defineConfig(async ({ mode }) => {
     const slug = file.replace('src/content/', '').replace('.md', '');
     return `/blog/${slug}`;
   });
+
+  // ビルド後にRSSフィードを生成
+  if (mode === 'production') {
+    await generateRssFeed();
+  }
 
   return {
     build: {
