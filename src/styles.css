@@ -5,19 +5,19 @@
 
 @layer components {
   .link-marker {
-    @apply text-text no-underline bg-marker-link transition-all duration-200;
+    @apply bg-marker-link text-text no-underline transition-all duration-200;
     &:hover {
       @apply bg-marker-focused;
     }
   }
-  
+
   .container-base {
-    @apply mx-auto p-2 min-w-80 max-w-4xl min-h-full;
+    @apply mx-auto min-h-full min-w-80 max-w-4xl p-2;
   }
 }
 
 * {
-  font-family: "Noto Sans JP", serif;
+  font-family: 'Noto Sans JP', serif;
   box-sizing: border-box;
 }
 
@@ -43,18 +43,19 @@ html {
   background-color: #242424;
 
   font-synthesis: none;
-  text-rendering: optimizeLegibility; 
+  text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
 
-html, body {
-  @apply w-full h-full bg-background text-text;
+html,
+body {
+  @apply h-full w-full bg-background text-text;
 }
 
 body {
-  @apply mx-auto p-2 min-w-80 max-w-4xl min-h-full;
+  @apply mx-auto min-h-full min-w-80 max-w-4xl p-2;
 }
 
 .analog-markdown p {

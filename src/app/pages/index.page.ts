@@ -9,20 +9,20 @@ export const routeMeta: RouteMeta = {
   meta: [
     {
       name: 'description',
-      content: 'RelicSnow.netのブログ記事一覧ページです'
+      content: 'RelicSnow.netのブログ記事一覧ページです',
     },
     {
       property: 'og:title',
-      content: 'ブログ記事一覧 | RelicSnow.net'
-    }
-  ]
+      content: 'ブログ記事一覧 | RelicSnow.net',
+    },
+  ],
 };
 
 @Component({
   selector: 'app-index',
   standalone: true,
   imports: [RouterLink],
-  templateUrl: "./index.page.html"
+  templateUrl: './index.page.html',
 })
 export default class IndexComponent {
   readonly posts = injectContentFiles<PostAttributes>();

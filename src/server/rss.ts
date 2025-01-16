@@ -24,7 +24,7 @@ export async function generateRssFeed() {
   });
 
   const contentFiles = await glob('src/content/*.md');
-  
+
   for (const file of contentFiles) {
     const content = await fs.readFile(file, 'utf-8');
     const { data, content: markdown } = matter(content);
@@ -47,4 +47,4 @@ export async function generateRssFeed() {
     fs.writeFile('dist/client/feed.json', feed.json1()),
     fs.writeFile('dist/client/feed.atom', feed.atom1()),
   ]);
-} 
+}
