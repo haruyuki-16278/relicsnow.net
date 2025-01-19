@@ -9,10 +9,12 @@ import { generateRssFeed } from './src/server/rss';
 export default defineConfig(async ({ mode }) => {
   // コンテンツファイルからルートを動的に生成
   const contentFiles = await glob('src/content/*.md');
-  const blogRoutes = contentFiles.map((file) => {
-    const slug = file.replace('src/content/', '').replace('.md', '');
-    return `/blog/${slug}`;
-  });
+  const blogRoutes = contentFiles
+    .filter((filename) => filename.includes('.md'))
+    .map((file) => {
+      const slug = file.replace('src/content/', '').replace('.md', '');
+      return `/post/${slug}`;
+    });
 
   // ビルド後にRSSフィードを生成
   if (mode === 'production') {
@@ -49,7 +51,7 @@ export default defineConfig(async ({ mode }) => {
           },
         },
         prerender: {
-          routes: ['/', '/blog', ...blogRoutes],
+          routes: ['/', ...blogRoutes],
         },
       }),
     ],
