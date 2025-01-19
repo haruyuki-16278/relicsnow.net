@@ -25,6 +25,19 @@ export const routeMeta: RouteMeta = {
   templateUrl: './index.page.html',
 })
 export default class IndexComponent {
-  readonly posts = injectContentFiles<PostAttributes>();
+  readonly posts = injectContentFiles<PostAttributes>()
+    .sort(
+      (a, b) =>
+        new Date(b.attributes.created_at).getTime() - new Date(a.attributes.created_at).getTime()
+    )
+    .map((v) => {
+      return {
+        ...v,
+        attributes: {
+          ...v.attributes,
+          slug: v.filename.split('/').at(-1)?.split('.').at(0),
+        },
+      };
+    });
   readonly postsExist = computed(() => this.posts.length > 0);
 }

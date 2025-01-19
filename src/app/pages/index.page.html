@@ -1,7 +1,7 @@
 <div class="mx-auto max-w-4xl px-4 py-8">
   <h2 class="mb-8 w-fit bg-marker-sub text-2xl font-bold">記事一覧</h2>
 
-  @if (postsExist()) { @for (post of posts; track post.attributes.slug) {
+  @if (postsExist()) { @for (post of posts; track post.filename) {
   <a
     [routerLink]="['/post/', post.attributes.slug]"
     class="group mb-8 block rounded-lg bg-white px-4 py-6 shadow-md transition-shadow hover:shadow-lg"
@@ -9,7 +9,12 @@
     <h2 class="mb-2 w-fit bg-marker-link px-2 text-2xl font-semibold group-hover:bg-marker-focused">
       {{ post.attributes.title }}
     </h2>
-    <p class="px-2 text-gray-600">{{ post.attributes.description }}</p>
+    <p class="px-2 text-gray-600">{{ post.attributes.abstract }}</p>
+    <p class="mt-2 px-2 text-sm text-gray-600">
+      作成日: {{ post.attributes.created_at }} @if (post.attributes.updated_at !== 'none') {
+      <span>（更新日: {{ post.attributes.updated_at }}）</span>
+      }
+    </p>
   </a>
   } } @else {
   <p class="text-center text-text-sub">記事がありません</p>
