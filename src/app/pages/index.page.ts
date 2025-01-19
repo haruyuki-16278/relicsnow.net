@@ -1,6 +1,6 @@
 import { injectContentFiles } from '@analogjs/content';
 import { RouteMeta } from '@analogjs/router';
-import { Component } from '@angular/core';
+import { Component, computed } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import PostAttributes from '../post-attributes';
 
@@ -26,4 +26,5 @@ export const routeMeta: RouteMeta = {
 })
 export default class IndexComponent {
   readonly posts = injectContentFiles<PostAttributes>();
+  readonly postsExist = computed(() => this.posts.length > 0);
 }
