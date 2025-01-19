@@ -8,14 +8,7 @@ import PostAttributes from '../../post-attributes';
   selector: 'app-blog-post',
   standalone: true,
   imports: [AsyncPipe, MarkdownComponent],
-  template: `
-    @if (post$ | async; as post) {
-      <article class="px-4 py-8">
-        <img class="mx-auto max-h-[40vh]" [src]="post.attributes.coverImage" />
-        <analog-markdown [content]="post.content" />
-      </article>
-    }
-  `,
+  templateUrl: './[slug].page.html',
 })
 export default class BlogPostComponent {
   readonly post$ = injectContent<PostAttributes>('slug');
