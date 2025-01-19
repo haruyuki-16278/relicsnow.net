@@ -26,6 +26,8 @@ export default defineConfig(async ({ mode }) => {
     resolve: {
       mainFields: ['module'],
     },
+    publicDir: 'src/assets',
+    assetsInclude: ['**/*.jpg', '**/*.png', '**/*.gif', '**/*.webp', '**/*.svg', '**/*.ico'],
     plugins: [
       analog({
         content: {
