@@ -9,7 +9,7 @@ import { generateRssFeed } from './src/server/rss';
 export default defineConfig(async ({ mode }) => {
   // コンテンツファイルからルートを動的に生成
   const contentFiles = await glob('src/content/*.md');
-  const blogRoutes = contentFiles.map(file => {
+  const blogRoutes = contentFiles.map((file) => {
     const slug = file.replace('src/content/', '').replace('.md', '');
     return `/blog/${slug}`;
   });
@@ -30,13 +30,24 @@ export default defineConfig(async ({ mode }) => {
       analog({
         content: {
           highlighter: 'shiki',
+          shikiOptions: {
+            highlighter: {
+              additionalLangs: [
+                'yaml',
+                'yml',
+                'markdown',
+                'pug',
+                'python',
+                'sql',
+                'nim',
+                'typescript',
+                'terraform',
+              ],
+            },
+          },
         },
         prerender: {
-          routes: [
-            '/',
-            '/blog',
-            ...blogRoutes,
-          ],
+          routes: ['/', '/blog', ...blogRoutes],
         },
       }),
     ],
