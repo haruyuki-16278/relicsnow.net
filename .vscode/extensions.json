@@ -4,6 +4,7 @@
     "angular.ng-template",
     "analogjs.vscode-analog",
     "bradlc.vscode-tailwindcss",
-    "esbenp.prettier-vscode"
+    "esbenp.prettier-vscode",
+    "github.vscode-github-actions"
   ]
 }
