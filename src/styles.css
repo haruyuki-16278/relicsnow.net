@@ -5,7 +5,7 @@
 
 @layer components {
   .link-marker {
-    @apply bg-marker-link text-text no-underline transition-all duration-200;
+    @apply inline bg-marker-link text-text no-underline transition-all duration-200;
     &:hover {
       @apply bg-marker-focused;
     }
@@ -67,10 +67,10 @@ body {
   }
 
   & h2 {
-    @apply mt-4 w-fit bg-marker-sub px-2 text-2xl font-semibold;
+    @apply mt-4 inline w-fit bg-marker-sub px-2 text-2xl font-semibold;
   }
   & h3 {
-    @apply mt-4 w-fit bg-marker-sub px-2 text-xl font-semibold;
+    @apply mt-4 inline w-fit bg-marker-sub px-2 text-xl font-semibold;
   }
   & h4 {
     @apply mt-4 w-fit px-2 text-lg font-semibold;
