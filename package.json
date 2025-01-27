@@ -9,7 +9,7 @@
     "ng": "ng",
     "dev": "ng serve",
     "start": "pnpm run dev",
-    "build": "ng build",
+    "build": "ng build && node scripts/generate-rss.js",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "prepare": "husky",

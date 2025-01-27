@@ -1,6 +1,5 @@
 import { Feed } from 'feed';
 import { promises as fs } from 'fs';
-import { join } from 'path';
 import { glob } from 'glob';
 import matter from 'gray-matter';
 
@@ -41,10 +40,10 @@ export async function generateRssFeed() {
     });
   }
 
-  await fs.mkdir('dist/client', { recursive: true });
+  await fs.mkdir('dist/analog/public', { recursive: true });
   await Promise.all([
-    fs.writeFile('dist/client/feed.xml', feed.rss2()),
-    fs.writeFile('dist/client/feed.json', feed.json1()),
-    fs.writeFile('dist/client/feed.atom', feed.atom1()),
+    fs.writeFile('dist/analog/public/feed.xml', feed.rss2()),
+    fs.writeFile('dist/analog/public/feed.json', feed.json1()),
+    fs.writeFile('dist/analog/public/feed.atom', feed.atom1()),
   ]);
 }
