@@ -92,7 +92,8 @@ body {
   }
 
   & a {
-    font-weight: bold;
+    text-decoration: underline;
+    color: midnightblue;
     background-image: linear-gradient(
       transparent 50%,
       var(--color-link) 50%,
