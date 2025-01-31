@@ -12,8 +12,8 @@ const AUTHOR = {
 
 export async function generateRssFeed() {
   const feed = new Feed({
-    title: 'RelicSnow.net',
-    description: 'RelicSnow.netのブログ記事フィード',
+    title: 'relicsnow.net',
+    description: 'feed of relicsnow.net / なごり雪',
     id: SITE_URL,
     link: SITE_URL,
     language: 'ja',
