@@ -59,21 +59,23 @@ body {
 }
 
 .analog-markdown {
+  @apply h-full;
+
   & * {
-    @apply mb-2;
+    @apply my-4;
   }
   & *:first-child {
     @apply mt-0;
   }
 
   & h2 {
-    @apply mt-4 inline w-fit bg-marker-sub px-2 text-2xl font-semibold;
+    @apply mt-8 inline w-fit bg-marker-sub px-2 text-2xl font-semibold;
   }
   & h3 {
-    @apply mt-4 inline w-fit bg-marker-sub px-2 text-xl font-semibold;
+    @apply mt-8 inline w-fit bg-marker-sub px-2 text-xl font-semibold;
   }
   & h4 {
-    @apply mt-4 w-fit px-2 text-lg font-semibold;
+    @apply mt-8 inline w-fit px-2 text-lg font-semibold;
   }
 
   & p {
@@ -83,9 +85,28 @@ body {
     @apply mx-1 rounded-sm bg-text p-[2px] text-background;
   }
   & pre {
-    @apply rounded-lg p-4;
+    @apply max-w-full overflow-x-auto rounded-lg p-4;
     & code {
       @apply m-0 bg-inherit p-0 text-inherit;
+    }
+  }
+
+  & a {
+    font-weight: bold;
+    background-image: linear-gradient(
+      transparent 50%,
+      var(--color-link) 50%,
+      var(--color-link) 80%,
+      transparent 80%
+    );
+
+    &:hover {
+      background-image: linear-gradient(
+        transparent 50%,
+        var(--color-focused) 50%,
+        var(--color-focused) 80%,
+        transparent 80%
+      );
     }
   }
 }
